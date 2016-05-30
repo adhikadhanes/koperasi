@@ -11,3 +11,50 @@
 
 
 
+
+
+Route::resource('barangs', 'BarangAPIController');
+
+Route::resource('barangs', 'BarangAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('tests', 'testAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('inventories', 'InventoryAPIController');
+
+Route::resource('penjualans', 'PenjualanAPIController');

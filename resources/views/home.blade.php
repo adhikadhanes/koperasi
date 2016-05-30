@@ -1,17 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+<br>
+<div class="col-md-6">
+            <div class="col-md-6 box">
+                 <div class="col-md-12">
+                    <center>
+                    
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+            <br>
+            <h1>
+                Selamat Datang, <br> {{ Auth::user()->name }}
+            </h1>
+            <hr>
+        
+
+        </center>
+            <!-- You can dynamically generate breadcrumbs here -->
+   <!--          <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
+            </ol> -->
         </div>
-    </div>
-</div>
+        </div>
+        </div>
 @endsection

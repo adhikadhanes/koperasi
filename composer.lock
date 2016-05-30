@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9af34b73ca37bed169ac388c1e45813",
-    "content-hash": "1d2feac0bc5272f0c66f2aea6c116a43",
+    "hash": "a2bbcd6256cb0dff735277e730d2f007",
+    "content-hash": "3fb4193046be4ed02f50cf184fd732ad",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1068,16 +1068,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc"
+                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/807dde98589f9b2b00624dca326740380d78dbbc",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/0343b2cedd0edb26cdc791212a8eb645c406018b",
+                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b",
                 "shasum": ""
             },
             "require": {
@@ -1097,7 +1097,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1124,7 +1124,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-05 06:56:13"
+            "time": "2016-04-12 18:27:47"
         },
         {
             "name": "symfony/finder",
@@ -2330,17 +2330,17 @@
             "time": "2015-05-11 14:41:42"
         },
         {
-            "name": "infyomlabs/core-templates",
+            "name": "infyomlabs/adminlte-templates",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/InfyOmLabs/core-templates.git",
-                "reference": "20d7f4eb45bac2d0907c51120d3072bd69dac63e"
+                "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
+                "reference": "c94757532e048516a3553ea7b6a5a7d4f99cb329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/core-templates/zipball/20d7f4eb45bac2d0907c51120d3072bd69dac63e",
-                "reference": "20d7f4eb45bac2d0907c51120d3072bd69dac63e",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/c94757532e048516a3553ea7b6a5a7d4f99cb329",
+                "reference": "c94757532e048516a3553ea7b6a5a7d4f99cb329",
                 "shasum": ""
             },
             "require": {
@@ -2350,7 +2350,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "InfyOm\\CoreTemplates\\": "src/"
+                    "InfyOm\\AdminLTETemplates\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2363,14 +2363,16 @@
                     "email": "me@mitul.me"
                 }
             ],
-            "description": "Core Bootstrap templates for InfyOm Laravel Generator",
+            "description": "AdminLTE templates for InfyOm Laravel Generator",
             "keywords": [
+                "AdminLTE",
                 "bootstrap",
                 "generator",
+                "infyom",
                 "laravel",
                 "templates"
             ],
-            "time": "2016-04-19 19:56:06"
+            "time": "2016-04-22 04:19:06"
         },
         {
             "name": "infyomlabs/generator-builder",
@@ -3782,16 +3784,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96"
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/eca51b7b65eb9be6af88ad7cc91685f1556f5c9a",
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a",
                 "shasum": ""
             },
             "require": {
@@ -3800,7 +3802,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -3827,7 +3829,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:55:57"
+            "time": "2016-05-26 21:46:24"
         },
         {
             "name": "zircote/swagger-php",
@@ -3895,9 +3897,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "infyomlabs/laravel-generator": 20,
-        "infyomlabs/core-templates": 20,
         "infyomlabs/swagger-generator": 20,
         "jlapp/swaggervel": 20,
+        "infyomlabs/adminlte-templates": 20,
         "infyomlabs/generator-builder": 20
     },
     "prefer-stable": false,

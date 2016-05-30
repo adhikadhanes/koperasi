@@ -16,9 +16,9 @@
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "infyomlabs/laravel-generator": "dev-master",
         "laravelcollective/html": "5.2.*",
-        "infyomlabs/core-templates": "dev-master",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
+        "infyomlabs/adminlte-templates": "dev-master",
         "doctrine/dbal": "~2.3",
         "infyomlabs/generator-builder": "dev-master"  
     },
