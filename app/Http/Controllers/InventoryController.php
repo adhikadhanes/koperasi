@@ -141,7 +141,33 @@ class InventoryController extends AppBaseController
             return redirect(route('inventories.index'));
         }
 
-        $inventory = $this->inventoryRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $fileName ='';
+        $imageName ='';
+        if($request->hasFile('file')){
+
+
+            $file = $request->file('file');
+
+            $imageName = $request->file . '.' . 
+            $request->file('file')->getClientOriginalExtension();
+
+
+            $fileName = $file->getClientOriginalName();
+            $request->file = $fileName;
+
+            $request->file('file')->move(
+                base_path() . '/public/uploads/', $imageName
+            );
+
+                    $request->file = $imageName;
+
+
+        }
+
+
+        $inventory->update($request->all());
 
         Flash::success('Inventory updated successfully.');
 
@@ -170,5 +196,20 @@ class InventoryController extends AppBaseController
         Flash::success('Inventory deleted successfully.');
 
         return redirect(route('inventories.index'));
+    }
+
+        public function invoice(Request $request)
+    {
+        return view('products.invoice');
+    }
+
+        public function product(Request $request)
+    {
+
+        $this->inventoryRepository->pushCriteria(new RequestCriteria($request));
+
+        $inventories = $this->inventoryRepository->all();
+
+        return view('products.product', compact('inventories'));
     }
 }

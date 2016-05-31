@@ -3,6 +3,7 @@
         <th>Nama</th>
         <th>Jumlah</th>
         <th>Harga</th>
+        <th>Image</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
             <td>{!! $inventory->Nama !!}</td>
             <td>{!! $inventory->Jumlah !!}</td>
             <td>{!! $inventory->Harga !!}</td>
+            <td><a href="{{ url('uploads',$inventory->file) }}">{!! $inventory->file !!}</a></td>
             <td>
                 {!! Form::open(['route' => ['inventories.destroy', $inventory->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

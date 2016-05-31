@@ -63,5 +63,5 @@ Route::resource('penjualans', 'PenjualanController');
 
 Route::resource('users', 'UserController');
 
-Route::get('invoice', 'PenjualanController@invoice');
-Route::get('product', 'PenjualanController@product');
+Route::get('invoice', 'InventoryController@invoice');
+Route::get('product', 'InventoryController@product');

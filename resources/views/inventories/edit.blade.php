@@ -12,7 +12,7 @@
 
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($inventory, ['route' => ['inventories.update', $inventory->id], 'method' => 'patch']) !!}
+                   {!! Form::model($inventory, ['route' => ['inventories.update', $inventory->id], 'method' => 'patch', 'files' => true]) !!}
 
                     @include('inventories.fields')
 

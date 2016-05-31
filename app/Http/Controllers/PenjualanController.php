@@ -36,16 +36,6 @@ class PenjualanController extends AppBaseController
             ->with('penjualans', $penjualans);
     }
 
-    public function invoice(Request $request)
-    {
-        return view('products.invoice');
-    }
-
-        public function product(Request $request)
-    {
-        return view('products.product');
-    }
-
     /**
      * Show the form for creating a new Penjualan.
      *

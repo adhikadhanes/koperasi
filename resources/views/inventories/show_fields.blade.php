@@ -10,6 +10,13 @@
     <p>{!! $inventory->Harga !!}</p>
 </div>
 
+<!-- Image Field -->
+<div class="form-group">
+    {!! Form::label('file', 'Image:') !!}
+    <p>{!! $inventory->file !!}</p>
+</div>
+
+
 <!-- Jumlah Field -->
 <div class="form-group">
     {!! Form::label('Jumlah', 'Jumlah:') !!}

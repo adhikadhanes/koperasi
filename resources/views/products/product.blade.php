@@ -9,27 +9,29 @@
 <div class="container-folio row">
 	<div class="col-md-12">
 
-
+			 
+            
+            
 				<!-- PROD GRID 
 				============================================================ -->
 				
+				@foreach($inventories as $inventory)
 				<!-- PROD. ITEM -->
 				 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
 						<!-- IMAGE CONTAINER-->
-						<img src="images/thumb.jpg" alt="post image">
+						<img src="{{ url('uploads', $inventory->file )}}" alt="post image" width="200px">
 						<!--END IMAGE CONTAINER-->
 						<!-- CAPTION -->
 						<div class="caption">
-						<h3 class="">Product title</h3>
-							<p class="">This project presents beautiful style graphic &amp; design. Bootstraptor provides modern features</p>
-							
+						<h2 class="">{!! $inventory->Nama !!}</h2>
+						<p>stok : {!! $inventory->Jumlah !!}</p>	
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-									<p class="lead">$21.000</p>
+									<p class="lead">Rp{!! $inventory->Harga !!}</p>
 								</div>
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-									<a class="btn btn-success btn-block" href="#">Add to cart</a>
+									<a class="btn btn-success btn-block" href="#">Beli</a>
 								</div>
 							</div>
 						</div> 
@@ -38,6 +40,7 @@
 					<!-- END: THUMBNAIL -->
 				</div>
 				<!-- PROD. ITEM -->
+				@endforeach
 				
 			
 				
