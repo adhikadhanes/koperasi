@@ -68,4 +68,9 @@ class Penjualan extends Model
     public static $rules = [
         'Nama' => 'required'
     ];
+
+    public function pembeli()
+    {
+        return $this->belongsTo('App\User','Pembeli','id');
+    }
 }

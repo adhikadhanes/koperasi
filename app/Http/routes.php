@@ -60,3 +60,8 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('/home', 'HomeController@index');
 
 Route::resource('penjualans', 'PenjualanController');
+
+Route::resource('users', 'UserController');
+
+Route::get('invoice', 'PenjualanController@invoice');
+Route::get('product', 'PenjualanController@product');

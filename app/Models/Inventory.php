@@ -39,7 +39,9 @@ class Inventory extends Model
 
     public $fillable = [
         'Nama',
-        'Jumlah'
+        'Jumlah',
+        'Harga',
+        'file'
     ];
 
     /**
@@ -49,7 +51,9 @@ class Inventory extends Model
      */
     protected $casts = [
         'Nama' => 'string',
-        'Jumlah' => 'string'
+        'Jumlah' => 'string',
+        'Harga' => 'number',
+        'file' => 'string'
     ];
 
     /**

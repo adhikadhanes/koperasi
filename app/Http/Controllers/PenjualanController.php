@@ -36,6 +36,16 @@ class PenjualanController extends AppBaseController
             ->with('penjualans', $penjualans);
     }
 
+    public function invoice(Request $request)
+    {
+        return view('products.invoice');
+    }
+
+        public function product(Request $request)
+    {
+        return view('products.product');
+    }
+
     /**
      * Show the form for creating a new Penjualan.
      *
@@ -44,8 +54,9 @@ class PenjualanController extends AppBaseController
     public function create()
     {
         $barang = \DB::table('inventories')->lists('Nama', 'id');
+        $user = \DB::table('users')->lists('name','id');
         
-        return view('penjualans.create', compact('barang'));
+        return view('penjualans.create', compact('barang','user'));
     }
 
     /**

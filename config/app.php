@@ -14,6 +14,9 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'fileDestinationPath' => 'uploads',
+    'maxFileSize' => 3000, // batas maks ukruan file
+
 
     /*
     |--------------------------------------------------------------------------

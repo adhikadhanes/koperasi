@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Inventory;
+use Storage;
 
 class InventoryController extends AppBaseController
 {
@@ -57,7 +59,24 @@ class InventoryController extends AppBaseController
     {
         $input = $request->all();
 
-        $inventory = $this->inventoryRepository->create($input);
+        $fileName ='';
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+
+            $fileName = $file->getClientOriginalName();
+            $request->file = $fileName;
+
+
+            $imageName = $fileName ;
+
+            $request->file('file')->move(
+                base_path() . '/public/uploads/', $imageName
+            );
+
+        }
+
+        $inventory = Inventory::create(array('Nama' => $request->Nama, 'Jumlah' => $request->Jumlah, 'Harga' => $request->Harga, 'file' => $fileName));
+
 
         Flash::success('Inventory saved successfully.');
 

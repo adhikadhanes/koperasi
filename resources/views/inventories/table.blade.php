@@ -2,6 +2,7 @@
     <thead>
         <th>Nama</th>
         <th>Jumlah</th>
+        <th>Harga</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -9,6 +10,7 @@
         <tr>
             <td>{!! $inventory->Nama !!}</td>
             <td>{!! $inventory->Jumlah !!}</td>
+            <td>{!! $inventory->Harga !!}</td>
             <td>
                 {!! Form::open(['route' => ['inventories.destroy', $inventory->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
