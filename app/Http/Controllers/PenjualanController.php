@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Inventory;
+use App\Models\Penjualan;
+use App\User;
+use Cart;
+use App\Http\Requests\CreateInventoryRequest;
+use App\Http\Requests\UpdateInventoryRequest;
+use App\Repositories\InventoryRepository;
+
 
 class PenjualanController extends AppBaseController
 {
@@ -63,6 +71,8 @@ class PenjualanController extends AppBaseController
         $penjualan = $this->penjualanRepository->create($input);
 
         Flash::success('Penjualan saved successfully.');
+
+        //update stok disini
 
         return redirect(route('penjualans.index'));
     }
@@ -155,4 +165,42 @@ class PenjualanController extends AppBaseController
 
         return redirect(route('penjualans.index'));
     }
+
+   public function checkout(Request $request){
+            
+        $formid       = str_random();
+        $cart_content = Cart::content(1);
+        $user = User::find($request->Pembeli);
+
+        foreach ($cart_content as $cart) {
+
+            $penjualans  = new Penjualan();
+
+            $product = Inventory::find($cart->id);
+
+            // $penjualan->id  = $cart->id;
+            $penjualans->Nama     = $product->Nama;
+            $penjualans->Jumlah         = $cart->qty;
+            $penjualans->Harga_Total = $cart->price * $cart->qty;
+            $penjualans->Pembeli      = $request->Pembeli;
+            $penjualans->save();
+
+            $jumlah = $product->Jumlah - $cart->qty;
+            $product->update(['Jumlah' => $jumlah]);
+
+            if($penjualans->Harga_Total > 2999) {
+                $poin = floor($penjualans->Harga_Total / 3000);
+                $user->update(['poin' => ($user->poin + $poin)]);
+            }
+        }
+
+        
+
+        Cart::destroy();
+
+                Flash::success('Checkout Berhasil.');
+               
+               return redirect()->action('InventoryController@product');
+    }
+
 }

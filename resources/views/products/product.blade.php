@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('flash::message')
 <section class="content-header">
         <h1 class="pull-left">Product</h1>
         <br>
@@ -8,9 +9,6 @@
 
 <div class="container-folio row">
 	<div class="col-md-12">
-
-			 
-            
             
 				<!-- PROD GRID 
 				============================================================ -->
@@ -31,7 +29,7 @@
 									<p class="lead">Rp{!! $inventory->Harga !!}</p>
 								</div>
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-									<a class="btn btn-success btn-block" href="#">Beli</a>
+									<a class="btn btn-info pull-right" href="{{ url('product/cart/'.$inventory->id) }}"><i class="fa fa-shopping-cart"></i> add to cart</a>
 								</div>
 							</div>
 						</div> 

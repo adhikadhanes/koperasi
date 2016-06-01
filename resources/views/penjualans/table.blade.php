@@ -3,6 +3,7 @@
         <th>Nama</th>
         <th>Jumlah</th>
         <th>Pembeli</th>
+        <th>Tanggal</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
             <td>{!! $penjualan->Nama !!}</td>
             <td>{!! $penjualan->Jumlah !!}</td>
             <td>{!! $penjualan->Pembeli !!}</td>
+            <td>{!! $penjualan->created_at !!}</td>
             <td>
                 {!! Form::open(['route' => ['penjualans.destroy', $penjualan->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
