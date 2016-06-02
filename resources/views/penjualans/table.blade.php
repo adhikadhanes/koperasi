@@ -11,7 +11,7 @@
         <tr>
             <td>{!! $penjualan->Nama !!}</td>
             <td>{!! $penjualan->Jumlah !!}</td>
-            <td>{!! $penjualan->Pembeli !!}</td>
+            <td>{!! $penjualan->pembeli->name !!}</td>
             <td>{!! $penjualan->created_at !!}</td>
             <td>
                 {!! Form::open(['route' => ['penjualans.destroy', $penjualan->id], 'method' => 'delete']) !!}
@@ -26,3 +26,4 @@
     @endforeach
     </tbody>
 </table>
+    <div class="pagination"> {!! $penjualans->render() !!}</div>

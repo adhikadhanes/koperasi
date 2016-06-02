@@ -38,7 +38,7 @@ class PenjualanController extends AppBaseController
     public function index(Request $request)
     {
         $this->penjualanRepository->pushCriteria(new RequestCriteria($request));
-        $penjualans = $this->penjualanRepository->all();
+        $penjualans = $this->penjualanRepository->paginate(15);
 
         return view('penjualans.index')
             ->with('penjualans', $penjualans);
@@ -107,14 +107,15 @@ class PenjualanController extends AppBaseController
     public function edit($id)
     {
         $penjualan = $this->penjualanRepository->findWithoutFail($id);
-
+        $barang = Inventory::paginate()->lists('Nama','Nama');
+        $user = User::paginate()->lists('name','id');
         if (empty($penjualan)) {
             Flash::error('Penjualan not found');
 
             return redirect(route('penjualans.index'));
         }
 
-        return view('penjualans.edit')->with('penjualan', $penjualan);
+        return view('penjualans.edit')->with('penjualan', $penjualan)->with('barang', $barang)->with('user',$user);
     }
 
     /**

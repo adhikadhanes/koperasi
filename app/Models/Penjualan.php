@@ -73,4 +73,9 @@ class Penjualan extends Model
     {
         return $this->belongsTo('App\User','Pembeli','id');
     }
+
+    public function pembelis()
+    {
+        return $this->belongsTo('App\Models\User','Pembeli','id');
+    }
 }
