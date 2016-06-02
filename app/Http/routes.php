@@ -1,5 +1,7 @@
 <?php
-
+use App\Models\Inventory;
+use App\Models\Penjualan;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,9 +13,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::auth();
 
@@ -65,3 +65,40 @@ Route::resource('users', 'UserController');
 
 Route::get('invoice', 'InventoryController@invoice');
 Route::get('product', 'InventoryController@product');
+
+Route::get('product/cart/{id}', function($id){
+		$users = User::paginate()->lists('name','id');
+		$inventory = Inventory::find($id);
+
+		$id          = $inventory->id;
+		$name        = $inventory->Nama;
+		$qty         = 1;
+		$price       = $inventory->Harga;
+
+		$data = array('id'          => $id, 
+					  'name'        => $name, 
+					  'qty'         => $qty, 
+					  'price'       => $price, 
+					  'options'     => array('size' => 'large'));
+
+		Cart::add($data);
+
+		$cart_content = Cart::content(1);
+		return View::make('products')->with('cart_content', $cart_content)->with('users',$users);
+});
+
+Route::get('mycart',function() {
+	$users = User::paginate()->lists('name','id');
+	$cart_content = Cart::content(1);
+		return View::make('products')->with('cart_content', $cart_content)->with('users',$users);
+});
+
+Route::get('cart/delete/{id}' , function($id){
+	Cart::remove($id);
+	$cart_content = Cart::content(1);
+	return View::make('products')->with('cart_content', $cart_content);
+});
+
+Route::post('cart/checkout', 'PenjualanController@checkout');
+
+

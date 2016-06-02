@@ -20,7 +20,8 @@
         "jlapp/swaggervel": "dev-master",
         "infyomlabs/adminlte-templates": "dev-master",
         "doctrine/dbal": "~2.3",
-        "infyomlabs/generator-builder": "dev-master"  
+        "infyomlabs/generator-builder": "dev-master",
+        "gloudemans/shoppingcart": "~1.3"
     },
     "autoload": {
         "classmap": [

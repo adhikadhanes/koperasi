@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Models\Penjualan;
 use App\User;
 
 class HomeController extends Controller
@@ -25,7 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('poin', 'asc')->paginate(15);
-        return view('home' , compact('users'));
+        $users = User::orderBy('poin', 'desc')->paginate(15);
+        
+        $penjualan =  Penjualan::get();
+
+        return view('home' , compact('users','penjualan'));
+
+
     }
 }
